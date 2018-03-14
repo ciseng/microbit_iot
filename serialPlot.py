@@ -43,28 +43,29 @@ def main():
         
         print("Micro:bit connected and reading data from it.")
 	while True:
-	    serial_line = ser.readline()
-            count = count + 1
-            reading = int(serial_line)
+		serial_line = ser.readline()
+            	count = count + 1
+            	reading = int(serial_line)
 
-            if(count < 100):
-                ax.set_xlim(0,100)
-            else:
-                ax.set_xlim(count-50,count+50)
-            xdata.append(count)
-            ydata.append(reading)
+            	if(count < 100):
+                	ax.set_xlim(0,100)
+            	else:
+                	ax.set_xlim(count-50,count+50)
+            	xdata.append(count)
+            	ydata.append(reading)
             
-            graph_line.set_xdata(xdata)
-            graph_line.set_ydata(ydata)
+            	graph_line.set_xdata(xdata)
+            	graph_line.set_ydata(ydata)
 
-            plt.draw()
-            plt.pause(1e-17)
+            	plt.draw()
+            	plt.pause(1e-17)
 
-            if (count > 100):
-               xdata.pop(0)
-               ydata.pop(0)
+            	if (count > 100):
+               		xdata.pop(0)
+               		ydata.pop(0)
             
     finally:
-        ser.close()
+	if(port):
+        	ser.close()
 
 main()
