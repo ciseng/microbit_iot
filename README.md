@@ -1,6 +1,7 @@
 # microbit_iot
 A simple light sensing application with micro:bit radio and serial.
-Tested on a MAC. 
+
+**Tested on a MAC, using Python 2.7.11 and serial version 3.2.1.** 
 
 The description of this application is in my blog article [Micro:bit and the Internet of Things](https://cigdemsengul.blogspot.co.uk/).
 
